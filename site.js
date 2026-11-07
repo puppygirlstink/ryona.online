@@ -111,7 +111,7 @@ for (let i = 0; i < sortedBadges.length; i += perRow) {
 
 document.getElementById('footer').innerHTML = `
     <div class="badges">${badgeRows.join('')}</div>
-    <p>puppygirlstink ~ <a href="mailto:lexi@puppybit.ch">lexi@puppybit.ch</a> ~ <a href="old/">old site</a></p>
+    <p><a href="mailto:lexi@puppybit.ch">lexi@puppybit.ch</a> ~ <a href="old/">old site</a></p>
 `;
 
 function updateTime() {
