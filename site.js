@@ -21,6 +21,12 @@ const UPDATES = [
     ['03/11/26', 'site got a new look!! ☀', 'd7aa99a'],
 ];
 
+// 88x31 badges in the footer ~ put the gif/png in the badges folder and add a line here
+// ['file in badges/', 'hover text', 'link (optional, leave it out if it doesnt go anywhere)']
+const BADGES = [
+    ['underwear.gif', 'underwear is for losers!'],
+];
+
 // clicking an update opens that commit on github (or the whole history if there's no hash)
 const REPO_URL = 'https://github.com/puppygirlstink/puppygirlstink.github.io';
 const commitUrl = (sha) => (sha ? `${REPO_URL}/commit/${sha}` : `${REPO_URL}/commits/main`);
@@ -63,8 +69,15 @@ document.getElementById('side').innerHTML = `
     </ul>
 `;
 
-document.getElementById('footer').innerHTML =
-    'puppygirlstink ~ <a href="mailto:lexi@puppybit.ch">lexi@puppybit.ch</a> ~ <a href="old/">old site</a>';
+function badge([file, title, link]) {
+    const img = `<img src="badges/${file}" width="88" height="31" alt="${title}" title="${title}">`;
+    return link ? `<a href="${link}" target="_blank">${img}</a>` : img;
+}
+
+document.getElementById('footer').innerHTML = `
+    <div class="badges">${BADGES.map(badge).join('')}</div>
+    <p>puppygirlstink ~ <a href="mailto:lexi@puppybit.ch">lexi@puppybit.ch</a> ~ <a href="old/">old site</a></p>
+`;
 
 function updateTime() {
     const el = document.getElementById('time');

@@ -517,6 +517,35 @@ a:hover {
     color: var(--muted);
 }
 
+#footer p {
+    margin: 0;
+}
+
+/* 88x31 badges */
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.badges:empty {
+    display: none;
+}
+
+.badges a {
+    display: block;
+    line-height: 0;
+}
+
+.badges img {
+    display: block;
+    width: 88px;
+    height: 31px;
+    image-rendering: pixelated;
+}
+
 /* ---------- small screens ---------- */
 
 @media (max-width: 760px) {
