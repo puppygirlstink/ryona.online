@@ -22,7 +22,8 @@ const UPDATES = [
 ];
 
 // 88x31 badges in the footer ~ put the gif/png in the badges folder and add a line here
-// ['file in badges/', 'hover text', 'link (optional, leave it out if it doesnt go anywhere)']
+// ['file in badges/ or a full image link', 'hover text (optional)', 'link (optional)']
+// ['file', 'https://...'] works too, the hover text is just the site name then
 const BADGES = [
     ['underwear.gif', 'underwear is for losers!'],
     ['teto.webp', 'teto'],
@@ -72,8 +73,21 @@ document.getElementById('side').innerHTML = `
     </ul>
 `;
 
+const isUrl = (s) => /^https?:\/\//.test(s || '');
+
 function badge([file, title, link]) {
-    const img = `<img src="badges/${file}" width="88" height="31" alt="${title}" title="${title}">`;
+    // a link in the hover text spot counts as the link
+    if (!link && isUrl(title)) {
+        link = title;
+        title = '';
+    }
+    // no hover text? use the site name or the file name
+    if (!title) {
+        title = link ? new URL(link).hostname : file.split('/').pop().replace(/\.\w+$/, '');
+    }
+    // full image urls work too, otherwise it's from the badges folder
+    const src = isUrl(file) ? file : `badges/${file}`;
+    const img = `<img src="${src}" width="88" height="31" alt="${title}" title="${title}" loading="lazy">`;
     return link ? `<a href="${link}" target="_blank">${img}</a>` : img;
 }
 
