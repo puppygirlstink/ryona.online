@@ -29,6 +29,9 @@ const BADGES = [
     ['teto.webp', 'teto'],
     ['slsknet.webp', 'https://slsknet.org'],
     ['able_8831.png', 'https://able.moe'],
+    ['buttonaban.gif'],
+    ['cutesocks.gif', 'i wear cute socks!'],
+    ['cyberdog.gif', 'cyberdog'],
 ];
 
 // clicking an update opens that commit on github (or the whole history if there's no hash)
