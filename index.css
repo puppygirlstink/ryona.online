@@ -524,10 +524,18 @@ a:hover {
 /* 88x31 badges */
 .badges {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+/* each row stays on one line, wraps only on small phones */
+.badge-row {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 4px;
-    margin-bottom: 10px;
 }
 
 .badges:empty {

@@ -24,14 +24,22 @@ const UPDATES = [
 // 88x31 badges in the footer ~ put the gif/png in the badges folder and add a line here
 // ['file in badges/ or a full image link', 'hover text (optional)', 'link (optional)']
 // ['file', 'https://...'] works too, the hover text is just the site name then
+// they get sorted a-z by file name automatically and split into 2 rows, so order here doesnt matter
 const BADGES = [
     ['able_8831.png', 'https://able.moe'],
     ['cutesocks.gif', 'i wear cute socks!'],
     ['cyberdog.gif', 'cyberdog'],
+    ['graphicdesign.gif', 'graphic design is my passion'],
+    ['hello_kitty.gif', 'hello kitty'],
+    ['hff.gif'],
+    ['miku.gif', 'this site is miku approved'],
+    ['slimesnow.gif', 'slimes... now!'],
     ['slsknet.webp', 'https://slsknet.org'],
     ['teto.webp', 'teto'],
     ['underwear.gif', 'underwear is for losers!'],
+    ['valid-bad.gif', 'w3c bad html markup'],
 ];
+const BADGE_ROWS = 2;
 
 // clicking an update opens that commit on github (or the whole history if there's no hash)
 const REPO_URL = 'https://github.com/puppygirlstink/puppygirlstink.github.io';
@@ -93,8 +101,16 @@ function badge([file, title, link]) {
     return link ? `<a href="${link}" target="_blank">${img}</a>` : img;
 }
 
+const badgeName = ([file]) => file.split('/').pop().toLowerCase();
+const sortedBadges = [...BADGES].sort((a, b) => badgeName(a).localeCompare(badgeName(b)));
+const perRow = Math.ceil(sortedBadges.length / BADGE_ROWS);
+const badgeRows = [];
+for (let i = 0; i < sortedBadges.length; i += perRow) {
+    badgeRows.push(`<div class="badge-row">${sortedBadges.slice(i, i + perRow).map(badge).join('')}</div>`);
+}
+
 document.getElementById('footer').innerHTML = `
-    <div class="badges">${BADGES.map(badge).join('')}</div>
+    <div class="badges">${badgeRows.join('')}</div>
     <p>puppygirlstink ~ <a href="mailto:lexi@puppybit.ch">lexi@puppybit.ch</a> ~ <a href="old/">old site</a></p>
 `;
 
