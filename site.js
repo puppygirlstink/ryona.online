@@ -25,6 +25,9 @@ const UPDATES = [
 // ['file in badges/', 'hover text', 'link (optional, leave it out if it doesnt go anywhere)']
 const BADGES = [
     ['underwear.gif', 'underwear is for losers!'],
+    ['teto.webp', 'teto'],
+    ['slsknet.webp', 'https://slsknet.org'],
+    ['https://able.moe/images/badges/able_8831.png', 'https://able.moe'],
 ];
 
 // clicking an update opens that commit on github (or the whole history if there's no hash)
