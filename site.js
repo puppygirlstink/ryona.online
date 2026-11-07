@@ -25,13 +25,12 @@ const UPDATES = [
 // ['file in badges/ or a full image link', 'hover text (optional)', 'link (optional)']
 // ['file', 'https://...'] works too, the hover text is just the site name then
 const BADGES = [
-    ['underwear.gif', 'underwear is for losers!'],
-    ['teto.webp', 'teto'],
-    ['slsknet.webp', 'https://slsknet.org'],
     ['able_8831.png', 'https://able.moe'],
-    ['buttonaban.gif'],
     ['cutesocks.gif', 'i wear cute socks!'],
     ['cyberdog.gif', 'cyberdog'],
+    ['slsknet.webp', 'https://slsknet.org'],
+    ['teto.webp', 'teto'],
+    ['underwear.gif', 'underwear is for losers!'],
 ];
 
 // clicking an update opens that commit on github (or the whole history if there's no hash)
