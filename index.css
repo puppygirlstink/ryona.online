@@ -162,21 +162,29 @@ a:hover {
     box-shadow: 3px 4px 0 rgba(107, 52, 22, 0.18);
 }
 
-/* sketchbook + paint dots at the bottom */
-#side::after {
-    content: '';
+/* whiteboard tray at the bottom: eraser, magnets, markers (added by site.js) */
+.tray {
     position: absolute;
-    left: 14px;
-    bottom: 12px;
-    width: 34px;
-    height: 22px;
-    background: var(--red-dark);
-    border-radius: 3px;
-    transform: skewX(-10deg);
-    box-shadow:
-        150px 4px 0 -4px var(--yellow),
-        170px 6px 0 -6px var(--orange-dark),
-        192px 2px 0 -3px var(--pink);
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    height: 42px;
+    pointer-events: none;
+}
+
+.tray img {
+    position: absolute;
+    bottom: 0;
+}
+
+.tray-eraser {
+    left: 0;
+    width: 63px;
+}
+
+.tray-tools {
+    right: 0;
+    width: 90px;
 }
 
 .note {

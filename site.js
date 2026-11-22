@@ -82,6 +82,10 @@ document.getElementById('side').innerHTML = `
     <ul class="updates">
         ${UPDATES.map(([d, t, sha]) => `<li><a href="${commitUrl(sha)}" target="_blank" title="see this on github">${t} <span class="date">[${d}]</span></a></li>`).join('')}
     </ul>
+    <div class="tray" aria-hidden="true">
+        <img class="tray-eraser" src="images/tray-eraser.png" alt="">
+        <img class="tray-tools" src="images/tray-tools.png" alt="">
+    </div>
 `;
 
 const isUrl = (s) => /^https?:\/\//.test(s || '');
