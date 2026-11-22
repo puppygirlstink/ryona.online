@@ -462,6 +462,17 @@ a:hover {
     margin: 18px 0;
 }
 
+/* guestbook embed (atabook) */
+.guestbook {
+    display: block;
+    width: 100%;
+    height: 700px;
+    border: 4px solid #fff;
+    box-shadow: 3px 4px 0 rgba(107, 52, 22, 0.18);
+    background: #fff;
+    margin: 6px 0 10px;
+}
+
 /* link lists (socials, music, etc.) */
 .links {
     list-style: none;

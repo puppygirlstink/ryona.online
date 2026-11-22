@@ -12,6 +12,7 @@ const NAV_TOP = [
 const NAV_BOTTOM = [
     ['gifts', 'gimmie stuff..'],
     ['rack', 'server rack'],
+    ['guestbook', 'guestbook'],
     ['mailto:lexi@puppybit.ch', 'email'],
 ];
 
